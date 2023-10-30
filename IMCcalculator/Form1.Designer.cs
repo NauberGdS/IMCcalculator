@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtIMC = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
@@ -37,27 +35,17 @@
             this.lblIMC = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblTabela = new System.Windows.Forms.Label();
+            this.NumPeso = new System.Windows.Forms.NumericUpDown();
+            this.NumAltura = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPeso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumAltura)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(68, 69);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(106, 20);
-            this.txtPeso.TabIndex = 0;
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(68, 97);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(106, 20);
-            this.txtAltura.TabIndex = 1;
-            this.txtAltura.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtIMC
             // 
             this.txtIMC.Enabled = false;
             this.txtIMC.Location = new System.Drawing.Point(68, 170);
+            this.txtIMC.MaxLength = 4;
             this.txtIMC.Name = "txtIMC";
             this.txtIMC.Size = new System.Drawing.Size(106, 20);
             this.txtIMC.TabIndex = 2;
@@ -82,7 +70,7 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(30, 133);
+            this.btnCalcular.Location = new System.Drawing.Point(39, 121);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(144, 24);
             this.btnCalcular.TabIndex = 5;
@@ -117,11 +105,39 @@
             this.lblTabela.Size = new System.Drawing.Size(0, 13);
             this.lblTabela.TabIndex = 8;
             // 
+            // NumPeso
+            // 
+            this.NumPeso.DecimalPlaces = 2;
+            this.NumPeso.Location = new System.Drawing.Point(68, 67);
+            this.NumPeso.Maximum = new decimal(new int[] {
+            800,
+            0,
+            0,
+            0});
+            this.NumPeso.Name = "NumPeso";
+            this.NumPeso.Size = new System.Drawing.Size(120, 20);
+            this.NumPeso.TabIndex = 9;
+            // 
+            // NumAltura
+            // 
+            this.NumAltura.DecimalPlaces = 2;
+            this.NumAltura.Location = new System.Drawing.Point(68, 95);
+            this.NumAltura.Maximum = new decimal(new int[] {
+            800,
+            0,
+            0,
+            0});
+            this.NumAltura.Name = "NumAltura";
+            this.NumAltura.Size = new System.Drawing.Size(120, 20);
+            this.NumAltura.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(211, 228);
+            this.Controls.Add(this.NumAltura);
+            this.Controls.Add(this.NumPeso);
             this.Controls.Add(this.lblTabela);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblIMC);
@@ -129,19 +145,16 @@
             this.Controls.Add(this.lblAltura);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.txtIMC);
-            this.Controls.Add(this.txtAltura);
-            this.Controls.Add(this.txtPeso);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.NumPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumAltura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtPeso;
-        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.TextBox txtIMC;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblAltura;
@@ -149,6 +162,8 @@
         private System.Windows.Forms.Label lblIMC;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblTabela;
+        private System.Windows.Forms.NumericUpDown NumPeso;
+        private System.Windows.Forms.NumericUpDown NumAltura;
     }
 }
 
